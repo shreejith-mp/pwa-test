@@ -13,14 +13,13 @@
 	<script type="text/javascript">
 		if ('serviceWorker' in navigator) {
 		  window.addEventListener('load', function() {
-		    navigator.serviceWorker.register('sw.js', { scope: '/' })
-	        .then(function (registration)
-	        {
-		          console.log('Service worker registered successfully');
-		        }).catch(function (e)
-		        {
-		          console.error('Error during service worker registration:', e);
-		        });
+		    navigator.serviceWorker.register('sw.js').then(function(registration) {
+		      // Registration was successful
+		      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		    }, function(err) {
+		      // registration failed :(
+		      console.log('ServiceWorker registration failed: ', err);
+		    });
 		  });
 		}
 
@@ -56,10 +55,10 @@
 	</script>
 
 
-		<style type="text/css">
-			    .add-to-btn{
-			    	font-size: larger;
-    				background: aliceblue;
-			    }
+		<style>
+		    .add-to-btn{
+		    	font-size: larger;
+				background: aliceblue;
+		    }
 		</style>
 </html>
