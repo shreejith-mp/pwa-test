@@ -19,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/pwa-test/index.html",
   "background_color": "#2196F3",
   "display": "standalone",
   "scope": "/",
