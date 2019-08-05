@@ -19,7 +19,7 @@
 	<script type="text/javascript">
 		if ('serviceWorker' in navigator) {
 		  window.addEventListener('load', function() {
-		    navigator.serviceWorker.register('sw.js').then(function(registration) {
+		    navigator.serviceWorker.register('/src/sw.js').then(function(registration) {
 		      // Registration was successful
 		      console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		    }, function(err) {
@@ -31,7 +31,6 @@
 
 		let deferredPrompt;
 		var btnAdd = document.querySelector(".add-to-btn");
-		console.log("btnAdd :", btnAdd);
 		btnAdd.style.display = 'none';
 
 		window.addEventListener('beforeinstallprompt', (e) => {
