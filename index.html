@@ -3,6 +3,12 @@
 	<head>
 		<title>PWA</title>
 		<link rel="manifest" href="manifest.json">
+		<style>
+		    .add-to-btn{
+		    	font-size: larger;
+				background: aliceblue;
+		    }
+		</style>
 	</head>
 	<body>
 		<button class="add-to-btn">Add to homescreen</button>
@@ -25,10 +31,12 @@
 
 		let deferredPrompt;
 		var btnAdd = document.querySelector("add-to-btn");
+		console.log("btnAdd :", btnAdd);
 		btnAdd.style.display = 'none';
 
 		window.addEventListener('beforeinstallprompt', (e) => {
 		  // Stash the event so it can be triggered later.
+		  console.log("e :", e);
 		  deferredPrompt = e;
 		  btnAdd.style.display = 'block';
 
@@ -53,12 +61,4 @@
 
 
 	</script>
-
-
-		<style>
-		    .add-to-btn{
-		    	font-size: larger;
-				background: aliceblue;
-		    }
-		</style>
 </html>
