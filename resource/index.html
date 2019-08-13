@@ -31,7 +31,7 @@
 
 		let deferredPrompt;
 		var btnAdd = document.querySelector(".add-to-btn");
-		btnAdd.style.display = 'none';
+		// btnAdd.style.display = 'none';
 
 		window.addEventListener('beforeinstallprompt', (e) => {
 		  // Stash the event so it can be triggered later.
@@ -41,6 +41,7 @@
 
 		  btnAdd.addEventListener('click', (e) => {
 		  // hide our user interface that shows our A2HS button
+		  console.log("e :", e);
 		  btnAdd.style.display = 'none';
 		  // Show the prompt
 		  deferredPrompt.prompt();
